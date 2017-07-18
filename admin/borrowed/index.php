@@ -100,7 +100,7 @@ if(!adminLoggedin($conn)) {
                                     <th>Title</th>
                                     <th>Author</th>
                                     <th>Year</th>
-                                    <th>Field</th>
+                                    <th>Department</th>
                                     <th>Publisher</th>
                                     <th>ISBN</th>
                                     <th>Type</th>
@@ -115,7 +115,7 @@ if(!adminLoggedin($conn)) {
                                     <td>Title</td>
                                     <td>Author<?php echo $i; ?></td>
                                     <td>Year</td>
-                                    <td>Field</td>
+                                    <td>Department</td>
                                     <td>Publisher<?php echo $i; ?></td>
                                     <td>ISBN</td>
                                     <td>Type</td>
@@ -130,7 +130,7 @@ if(!adminLoggedin($conn)) {
                                     <td>jsd</td>
                                     <td>aef</td>
                                     <td>sad</td>
-                                    <td>Field</td>
+                                    <td>Department</td>
                                     <td>Publisher</td>
                                     <td>ISBN</td>
                                     <td>Type</td>

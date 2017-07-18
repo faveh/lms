@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.6deb4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 16, 2017 at 11:04 AM
--- Server version: 10.1.22-MariaDB
--- PHP Version: 7.1.4
+-- Host: localhost:3306
+-- Generation Time: Jul 19, 2017 at 12:27 AM
+-- Server version: 5.7.18-0ubuntu0.17.04.1
+-- PHP Version: 7.0.18-0ubuntu0.17.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -46,7 +44,7 @@ CREATE TABLE `lms_admin` (
 --
 
 INSERT INTO `lms_admin` (`admin_id`, `username`, `email`, `password`, `name`, `mob_no`, `gender`, `address`, `admin_uid`, `status`) VALUES
-(1, 'tjay', 'oyenirantunji2339@gmail.com', 'utile', 'Tunji Oyeniran', 'NA', 'M', 'NA', 'NA', 0),
+(1, 'tjay', 'oyenirantunji2339@gmail.com', 'utile', 'Tunji Oyeniran', 'NA', 'M', 'NA', 'NA', 1),
 (2, 'adebimpe', 'splendorette05@gmail.com', 'adebimpe', 'adebimpe tolu', '08165779777', 'M', 'NA', '017a3a8ecf765bc74e53', 0);
 
 -- --------------------------------------------------------
@@ -81,7 +79,7 @@ CREATE TABLE `lms_books` (
   `title` varchar(128) NOT NULL,
   `author` varchar(128) NOT NULL,
   `year` year(4) NOT NULL,
-  `field_code` varchar(8) NOT NULL,
+  `department_code` varchar(8) NOT NULL,
   `publisher` varchar(128) NOT NULL,
   `series_title` varchar(256) NOT NULL,
   `ISBN` varchar(20) NOT NULL,
@@ -99,7 +97,7 @@ CREATE TABLE `lms_books` (
 -- Dumping data for table `lms_books`
 --
 
-INSERT INTO `lms_books` (`book_id`, `admin_id`, `title`, `author`, `year`, `field_code`, `publisher`, `series_title`, `ISBN`, `volume`, `edition`, `format_code`, `type_code`, `date_added`, `copies`, `available`, `borrowed`) VALUES
+INSERT INTO `lms_books` (`book_id`, `admin_id`, `title`, `author`, `year`, `department_code`, `publisher`, `series_title`, `ISBN`, `volume`, `edition`, `format_code`, `type_code`, `date_added`, `copies`, `available`, `borrowed`) VALUES
 (1, 1, 'Title Example', 'Author Example', 2016, 'TECH', 'Tee Publishers', '', '987-929-928-9', 1, 13, '', '', '2016-07-07 01:38:12', 1, 1, 0),
 (2, 1, '26th European Symposium on Computer Aided Process Engineering', 'Science Direct', 2016, 'SCI', 'Science Direct', 'Computer Aided Chemical Engineering', '978-0-444-63428-3', 38, 2, 'HARD', 'seri', '2016-07-07 15:24:31', 20, 20, 0),
 (3, 1, 'Efficiency and Competition in Chinese Banking', 'Science Direct', 2016, 'SCI', 'Science Direct', 'Chandos Asian Studies Series', '978-0-08-100074-8', 0, 1, 'BOTH', 'nonf', '2016-07-07 15:24:31', 30, 30, 0),
@@ -478,15 +476,15 @@ CREATE TABLE `lms_downloaded` (
 
 CREATE TABLE `lms_fields` (
   `lms_field_id` int(8) NOT NULL,
-  `lms_field_code` varchar(8) NOT NULL DEFAULT 'CSC',
-  `lms_field` varchar(64) NOT NULL DEFAULT 'COMPUTER SCIENCE'
+  `lms_department_code` varchar(8) NOT NULL DEFAULT 'CSC',
+  `lms_department` varchar(64) NOT NULL DEFAULT 'COMPUTER SCIENCE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `lms_fields`
 --
 
-INSERT INTO `lms_fields` (`lms_field_id`, `lms_field_code`, `lms_field`) VALUES
+INSERT INTO `lms_fields` (`lms_field_id`, `lms_department_code`, `lms_department`) VALUES
 (1, 'TECH', 'TECHNOLOGY'),
 (2, 'SCI', 'SCIENCE'),
 (3, 'ARTS', 'ARTS'),
@@ -612,7 +610,7 @@ ALTER TABLE `lms_approval`
 --
 ALTER TABLE `lms_books`
   ADD PRIMARY KEY (`book_id`),
-  ADD KEY `field_code` (`field_code`),
+  ADD KEY `field_code` (`department_code`),
   ADD KEY `type_code` (`type_code`),
   ADD KEY `admin_id` (`admin_id`);
 
@@ -661,7 +659,7 @@ ALTER TABLE `lms_downloaded`
 --
 ALTER TABLE `lms_fields`
   ADD PRIMARY KEY (`lms_field_id`),
-  ADD KEY `lms_field_code` (`lms_field_code`);
+  ADD KEY `lms_field_code` (`lms_department_code`);
 
 --
 -- Indexes for table `lms_lib_info`
@@ -747,8 +745,7 @@ ALTER TABLE `lms_page_setup`
 -- AUTO_INCREMENT for table `lms_users`
 --
 ALTER TABLE `lms_users`
-  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
-
+  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -201,7 +201,7 @@ include_once $ld.INC."page_alerts.php";
                                     <th>Title</th>
                                     <th>Author</th>
                                     <th>Year</th>
-                                    <th>Field</th>
+                                    <th>Department</th>
                                     <th>Publisher</th>
                                     <th>Series Title</th>
                                     <th>ISBN</th>
@@ -226,7 +226,7 @@ include_once $ld.INC."page_alerts.php";
                                     $book_title = $book['title'];
                                     $book_author = $book['author'];
                                     $book_year = $book['year'];
-                                    $book_fic = $book['field_code'];
+                                    $book_fic = $book['department_code'];
                                     $book_publisher = $book['publisher'];
                                     $book_st = $book['series_title'];
                                     $book_ISBN = $book['ISBN'];
@@ -375,13 +375,13 @@ include_once $ld.INC."page_alerts.php";
                                 <div class="col-sm-2"><label>Year</label></div>
                                 <div class="col-sm-10"><input type="text" class="form-control entry1" name="year1" /></div>
                                 <div class="clearfix"></div>
-                                <div class="col-sm-2"><label>Field</label></div>
+                                <div class="col-sm-2"><label>Department</label></div>
                                 <div class="col-sm-10"><select class="form-control entry1" name="field1">
                                     <?php
                                         $fieldResult = mysqli_query($conn, $fieldQuery);
                                         while($field = mysqli_fetch_array($fieldResult)) {
-                                            $fieldCode = $field['lms_field_code'];
-                                            $fieldMeaning = $field['lms_field'];
+                                            $fieldCode = $field['lms_department_code'];
+                                            $fieldMeaning = $field['lms_department'];
 
                                             ?>
                                                 <option value="<?php echo $fieldCode; ?>"><?php echo $fieldMeaning; ?></option>

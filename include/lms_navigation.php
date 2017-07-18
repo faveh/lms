@@ -57,8 +57,8 @@ if( !(isset($ld)) ) {
                                         $fieldResult = mysqli_query($conn, $fieldQuery);
                                         
                                         while($field = mysqli_fetch_array($fieldResult)) {
-                                            $fieldCode = $field['lms_field_code'];
-                                            $fieldMeaning = $field['lms_field'];
+                                            $fieldCode = $field['lms_department_code'];
+                                            $fieldMeaning = $field['lms_department'];
 
                                             ?>
                                                 <option value="<?php echo $fieldCode; ?>"><?php echo $fieldMeaning; ?></option>

@@ -2,7 +2,7 @@
 
 $host="localhost"; 
 $db_username="root"; 
-$db_password=""; 
+$db_password="Spellingbee@1";
 $db_name="lms";
 
 /*Default time zone ,to be able to send mail */

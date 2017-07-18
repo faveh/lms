@@ -101,7 +101,7 @@ if(!adminLoggedin($conn)) {
                                     <th>Title</th>
                                     <th>Author</th>
                                     <th>Year</th>
-                                    <th>Field</th>
+                                    <th>Department</th>
                                     <th>Publisher</th>
                                     <th>ISBN</th>
                                     <th>Type</th>
@@ -116,7 +116,7 @@ if(!adminLoggedin($conn)) {
                                     <td>Title</td>
                                     <td>Author<?php echo $i; ?></td>
                                     <td>Year</td>
-                                    <td>Field</td>
+                                    <td>Department</td>
                                     <td>Publisher<?php echo $i; ?></td>
                                     <td>ISBN</td>
                                     <td>Type</td>
@@ -131,7 +131,7 @@ if(!adminLoggedin($conn)) {
                                     <td>jsd</td>
                                     <td>aef</td>
                                     <td>sad</td>
-                                    <td>Field</td>
+                                    <td>Department</td>
                                     <td>Publisher</td>
                                     <td>ISBN</td>
                                     <td>Type</td>
@@ -168,7 +168,7 @@ if(!adminLoggedin($conn)) {
                         <div class="col-sm-10"><input type="text" class="form-control" name="npword" /></div>
                         <div class="col-sm-2"><label>Year</label></div>
                         <div class="col-sm-10"><input type="text" class="form-control" name="cnpword" /></div>
-                        <div class="col-sm-2"><label>Field</label></div>
+                        <div class="col-sm-2"><label>Department</label></div>
                         <div class="col-sm-10"><select class="form-control" value="NA">
                             <option value="CSC">CSC - Computer Science</option>
                             <option value="NA">NA - Others</option>
@@ -177,7 +177,7 @@ if(!adminLoggedin($conn)) {
                         <div class="col-sm-10"><input type="text" class="form-control" name="cnpword" /></div>
                         <div class="col-sm-2"><label>ISBN</label></div>
                         <div class="col-sm-10"><input type="text" class="form-control" name="cnpword" /></div>
-                        <div class="col-sm-2"><label>Field</label></div>
+                        <div class="col-sm-2"><label>Department</label></div>
                         <div class="col-sm-10"><select class="form-control" value="S">
                             <option value="S">S - Soft Copy</option>
                             <option value="H">H -Hard Copy Science</option>
