@@ -237,7 +237,7 @@ if(isset($_GET['msg']) && isset($_GET['samt']) && isset($_GET['famt']) && $_GET[
                                     <th>Title</th>
                                     <th>Author</th>
                                     <th>Year</th>
-                                    <th>Field</th>
+                                    <th>Department</th>
                                     <th>Publisher</th>
                                     <th>Series Title</th>
                                     <th>ISBN</th>
@@ -262,7 +262,7 @@ if(isset($_GET['msg']) && isset($_GET['samt']) && isset($_GET['famt']) && $_GET[
                                     $book_title = $book['title'];
                                     $book_author = $book['author'];
                                     $book_year = $book['year'];
-                                    $book_fic = $book['field_code'];
+                                    $book_fic = $book['department_code'];
                                     $book_publisher = $book['publisher'];
                                     $book_st = $book['series_title'];
                                     $book_ISBN = $book['ISBN'];
@@ -348,7 +348,7 @@ if(isset($_GET['msg']) && isset($_GET['samt']) && isset($_GET['famt']) && $_GET[
                         <div class="col-sm-10"><input type="text" class="form-control" name="npword" /></div>
                         <div class="col-sm-2"><label>Year</label></div>
                         <div class="col-sm-10"><input type="text" class="form-control" name="cnpword" /></div>
-                        <div class="col-sm-2"><label>Field</label></div>
+                        <div class="col-sm-2"><label>Department</label></div>
                         <div class="col-sm-10"><select class="form-control" value="NA">
                             <option value="CSC">CSC - Computer Science</option>
                             <option value="NA">NA - Others</option>
@@ -357,7 +357,7 @@ if(isset($_GET['msg']) && isset($_GET['samt']) && isset($_GET['famt']) && $_GET[
                         <div class="col-sm-10"><input type="text" class="form-control" name="cnpword" /></div>
                         <div class="col-sm-2"><label>ISBN</label></div>
                         <div class="col-sm-10"><input type="text" class="form-control" name="cnpword" /></div>
-                        <div class="col-sm-2"><label>Field</label></div>
+                        <div class="col-sm-2"><label>Department</label></div>
                         <div class="col-sm-10"><select class="form-control" value="S">
                             <option value="S">S - Soft Copy</option>
                             <option value="H">H -Hard Copy Science</option>

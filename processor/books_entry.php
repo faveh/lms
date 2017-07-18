@@ -58,13 +58,13 @@ if (!adminLoggedin($conn)) {
                 <div class="col-sm-2"><label>Year</label></div>
                 <div class="col-sm-10"><input type="text" class="form-control entry<?php echo $i; ?>" name="year<?php echo $i; ?>" /></div>
                 <div class="clearfix"></div>
-                <div class="col-sm-2"><label>Field</label></div>
+                <div class="col-sm-2"><label>Department</label></div>
                 <div class="col-sm-10"><select class="form-control entry<?php echo $i; ?>" name="field<?php echo $i; ?>">
                     <?php
                         $fieldResult = mysqli_query($conn, $fieldQuery);
                         while($field = mysqli_fetch_array($fieldResult)) {
-                            $fieldCode = $field['lms_field_code'];
-                            $fieldMeaning = $field['lms_field'];
+                            $fieldCode = $field['lms_department_code'];
+                            $fieldMeaning = $field['lms_department'];
 
                             ?>
                                 <option value="<?php echo $fieldCode; ?>"><?php echo $fieldMeaning; ?></option>

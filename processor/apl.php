@@ -149,7 +149,7 @@ if (!adminLoggedin($conn)) {
                     <th>Title</th>
                     <th>Author</th>
                     <th>Year</th>
-                    <th>Field</th>
+                    <th>Department</th>
                     <th>Publisher</th>
                     <th>Series Title</th>
                     <th>ISBN</th>
@@ -174,7 +174,7 @@ if (!adminLoggedin($conn)) {
                     $book_title = $book['title'];
                     $book_author = $book['author'];
                     $book_year = $book['year'];
-                    $book_fic = $book['field_code'];
+                    $book_fic = $book['department_code'];
                     $book_publisher = $book['publisher'];
                     $book_st = $book['series_title'];
                     $book_ISBN = $book['ISBN'];

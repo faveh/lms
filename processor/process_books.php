@@ -87,7 +87,7 @@ if (!adminLoggedin($conn)) {
                 echo "<br>";
                 echo "<strong>Year:</strong> "$year;
                 echo "<br>";
-                echo "<strong>Field:</strong> "$field;
+                echo "<strong>Department:</strong> "$field;
                 echo "<br>";
                 echo "<strong>Publisher:</strong> "$publisher;
                 echo "<br>";
@@ -106,7 +106,7 @@ if (!adminLoggedin($conn)) {
                 echo "<strong>Copies:</strong> "$copies;
                 echo "<br>";*/
 
-                $inputBookQuery = "INSERT INTO $lms_books (admin_id, title, author, year, field_code, publisher, series_title, ISBN, volume, edition, format_code, type_code, date_added, copies, available) VALUES ('$admin_id', '$title', '$author', '$year', '$field', '$publisher', '$series_title', '$ISBN', '$volume', '$edition', '$format', '$type', CURRENT_TIMESTAMP, '$copies', '$copies')";
+                $inputBookQuery = "INSERT INTO $lms_books (admin_id, title, author, year, department_code, publisher, series_title, ISBN, volume, edition, format_code, type_code, date_added, copies, available) VALUES ('$admin_id', '$title', '$author', '$year', '$field', '$publisher', '$series_title', '$ISBN', '$volume', '$edition', '$format', '$type', CURRENT_TIMESTAMP, '$copies', '$copies')";
                 $result = mysqli_query($conn, $inputBookQuery);
 
                 if($result) {
